@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140723074816) do
 
-  create_table "table_banners", force: true do |t|
+  create_table "banners", force: true do |t|
     t.string "name"
   end
 

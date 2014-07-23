@@ -1,3 +1,2 @@
-class Banner < ActiveModel::Base
-
+class Banner < ActiveRecord::Base
 end
