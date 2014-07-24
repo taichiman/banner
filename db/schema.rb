@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140723074816) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "banners", force: true do |t|
     t.string "name"
   end
