@@ -6,6 +6,12 @@
     = javascript_include_tag :application
     = csrf_meta_tags
   %body
-    = render partial: 'layouts/items/header'
     .container
-      = yield
+      = render partial: 'layouts/items/header'    
+      .row
+        .col-md-4
+          = render partial: 'layouts/items/aside_menu'  
+        .col-md-20
+          .container
+            %article
+              = yield

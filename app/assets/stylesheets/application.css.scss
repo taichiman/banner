@@ -3,5 +3,35 @@
  *= require_self
  */
 
+$grid-columns: 24;
+$grid-gutter-width: 5px;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#aside-menu {
+  .active a {
+    background-color: #00CC99;
+  }  
+}
+
+.navbar {
+  margin-top: 5px;
+
+  .navbar-brand {
+    width: 169px;
+    text-align: center;
+  }
+
+  .nav {
+    padding-top: 6px;
+  }
+
+  .nav > li:first-child {
+    padding-left: 14px;
+  }
+}
+
+article {
+  padding-top: 7px;
+}
