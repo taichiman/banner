@@ -1,0 +1,13 @@
+.container
+  %article
+    .row
+      .col-md-20
+        = yield :top_banner
+    .row
+      .col-md-16
+        = yield :title
+        / # = yield      
+      .col-md-4
+        = yield :right_banner
+    .row
+      .col-md-20

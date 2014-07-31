@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Widget
+
   def active_menu_item current
     'active' if controller_name == current.to_s
   end

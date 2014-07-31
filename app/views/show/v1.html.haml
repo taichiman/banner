@@ -1,1 +1,11 @@
-hello from show#v1
+- content_for :title do
+  %h3 Banner widget test
+
+- content_for :top_banner do
+  .banner.top-banner
+    = banner_widget :top
+
+- content_for  :right_banner do
+  .banner.right-banner
+    = banner_widget :right
+
