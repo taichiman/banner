@@ -10,7 +10,9 @@ module Widget
     when :top
       { type: :banner, src: '/img/banner-leaderboard-1.png' }
     when :right
-      { type: :banner, src: '/img/banner-skyscraper-1.gif' }      
+      { type: :banner, src: '/img/banner-vertical-1.gif' }
+    when :bottom
+      { type: :banner, src: '/img/banner-leaderboard-1.jpg' }            
     end
   end
 
@@ -20,6 +22,8 @@ module Widget
       top_banner_template( src )
     when :right
       right_banner_template( src )
+    when :bottom
+      bottom_banner_template( src )      
     end
   end
 
@@ -33,7 +37,14 @@ module Widget
   def right_banner_template src
     case src[:type]
     when :banner
-      content = link_to image_tag(src[:src], size: '120x600', alt: 'right-banner'), 'http://www.example-right.com/', target: '_blank'    
+      content = link_to image_tag(src[:src], size: '120x240', alt: 'right-banner'), 'http://www.example-right.com/', target: '_blank'    
+    end
+  end
+
+  def bottom_banner_template src
+    case src[:type]
+    when :banner
+      content = link_to image_tag(src[:src], size: '728x90', alt: 'botttom-banner'), 'http://www.example-right.com/', target: '_blank'    
     end
   end
 
@@ -42,6 +53,8 @@ module Widget
     when :top
       "#{content}".html_safe      
     when :right
+      "#{content}".html_safe      
+    when :bottom
       "#{content}".html_safe      
     end
   end

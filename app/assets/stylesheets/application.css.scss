@@ -1,71 +1,8 @@
-/*
- *= require_tree .
- *= require_self
- */
-
 $grid-columns: 24;
 $grid-gutter-width: 5px;
-
-$top-banner-width: 728px;
-$top-banner-height: 90px;
-
-$right-banner-width: 120px;
-$right-banner-height: 600px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#aside-menu {
-  .active a {
-    background-color: #00CC99;
-  }  
-}
-
-.navbar {
-  margin-top: 5px;
-
-  .navbar-brand {
-    width: 169px;
-    text-align: center;
-  }
-
-  .nav {
-    padding-top: 6px;
-  }
-
-  .nav > li:first-child {
-    padding-left: 14px;
-  }
-}
-
-article {
-  padding-top: 7px;
-  h3 {
-    margin-top: 0;
-    padding-left: 7px;
-  }
-}
-
-article h3 {
-  margin-top: 1em;
-}
-
-.banner {
-  img {
-    border: 1px solid ; 
-  }
-}
-
-.top-banner {
-  width: $top-banner-width;
-  height:$top-banner-height;
-
-  @include center_block();
-}
-
-.right-banner {
-  width: $right-banner-width;
-  height:$right-banner-height;
-
-  @include center_block(); 
-}
+@import "layout";
+@import "banners";
