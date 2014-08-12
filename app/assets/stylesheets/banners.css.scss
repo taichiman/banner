@@ -7,6 +7,9 @@ $right-banner-height: 320px;
 $bottom-banner-width: 728px;
 $bottom-banner-height: 90px;
 
+$middle-banner-width: 300px;
+$middle-banner-height: 300px;
+
 .banner {
   img {
     border: 1px solid ; 
@@ -24,8 +27,7 @@ $bottom-banner-height: 90px;
   width: $right-banner-width;
   height:$right-banner-height;
 
-  margin-top: 80px;
-
+  margin-top: 70px;
   margin-left:auto;
   margin-right:-10px;
 }
@@ -34,5 +36,14 @@ $bottom-banner-height: 90px;
   width: $top-banner-width;
   height:$top-banner-height;
 
+  margin-top:10px;
   @include center_block();
+}
+
+.middle-banner{
+  width: $middle-banner-width;
+  height:$middle-banner-height;
+  
+  margin:0 40px 10px 0;
+  float:left;
 }

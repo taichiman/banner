@@ -12,7 +12,9 @@ module Widget
     when :right
       { type: :banner, src: '/img/banner-vertical-1.gif' }
     when :bottom
-      { type: :banner, src: '/img/banner-leaderboard-1.jpg' }            
+      { type: :banner, src: '/img/banner-leaderboard-1.jpg' }
+    when :middle
+      { type: :banner, src: '/img/banner-middle-1.gif' }            
     end
   end
 
@@ -24,6 +26,8 @@ module Widget
       right_banner_template( src )
     when :bottom
       bottom_banner_template( src )      
+    when :middle
+      middle_banner_template( src )      
     end
   end
 
@@ -44,18 +48,27 @@ module Widget
   def bottom_banner_template src
     case src[:type]
     when :banner
-      content = link_to image_tag(src[:src], size: '728x90', alt: 'botttom-banner'), 'http://www.example-right.com/', target: '_blank'    
+      content = link_to image_tag(src[:src], size: '728x90', alt: 'botttom-banner'), 'http://www.example-bottom.com/', target: '_blank'    
+    end
+  end
+
+  def middle_banner_template src
+    case src[:type]
+    when :banner
+      content = link_to image_tag(src[:src], size: '300x300', alt: 'middle-banner'), 'http://www.example-middle.com/', target: '_blank'    
     end
   end
 
   def wrap_content pos, content
     case pos
     when :top
-      "#{content}".html_safe      
+      "<div class=\"banner top-banner\">#{content}</div>".html_safe      
     when :right
-      "#{content}".html_safe      
+      "<div class=\"banner right-banner\">#{content}</div>".html_safe      
     when :bottom
-      "#{content}".html_safe      
+      "<div class=\"banner bottom-banner\">#{content}</div>".html_safe
+    when :middle
+      "<div class=\"banner middle-banner\">#{content}</div>".html_safe      
     end
   end
 end
