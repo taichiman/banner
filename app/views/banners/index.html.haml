@@ -1,1 +1,15 @@
-hello from banners#index
+%h1 Banner list
+
+%table.table.table-striped
+	%thead
+		%th Type
+		%th Place
+		%th Link
+	%tbody
+	- @banners.each do |banner|
+		%tr
+			%td= banner.banner_type
+			%td= banner.place
+			%td= banner.link
+			%td
+				= link_to image_tag('trash.gif'), banner, method: :delete, data: { confirm: 'Are you sure?'}

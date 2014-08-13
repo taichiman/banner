@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'show/v2', to: 'show#v2', as: 'v2'
   get 'show/v3', to: 'show#v3', as: 'v3'
 
-  resources :banners, only: %w[ index ]
+  resources :banners, only: [ :index, :destroy]
 end
