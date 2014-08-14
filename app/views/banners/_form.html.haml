@@ -1,0 +1,32 @@
+= form_for @banner do |f|
+	.form-group
+	= f.label :banner_type, 'Type: '
+	= f.radio_button :banner_type, :banner
+	= f.label :banner_type, 'Banner', value: :banner
+	= f.radio_button :banner_type, :flash
+	= f.label :banner_type, 'Flash', value: :flash
+	= f.radio_button :banner_type, :html
+	= f.label :banner_type, 'HTML', value: :html
+
+	.form-group
+	= f.label :place, 'Place: '
+	= f.check_box :top
+	= f.label :top, 'Top'
+	= f.check_box :right
+	= f.label :right, 'Right'
+	= f.check_box :bottom
+	= f.label :bottom, 'Bottom'
+	= f.check_box :left
+	= f.label :left, 'Left'
+
+	.form-group
+	= f.label :link
+	= f.text_field :link, class: 'form-control'
+
+	.form-group
+	= f.label :html
+	= f.text_area :html, cols: 60, rows: 5, class: 'form-control'
+
+
+	.form-group
+	= f.submit
