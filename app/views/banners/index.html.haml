@@ -1,15 +1,24 @@
-%h1 Banner list
+%h1 List of Banners
 
 %table.table.table-striped
 	%thead
 		%th Type
-		%th Place
+		%th Top
+		%th Right
+		%th Bottom
+		%th Left
 		%th Link
 	%tbody
 	- @banners.each do |banner|
 		%tr
 			%td= banner.banner_type
-			%td= banner.place
+
+			%td= checker banner.top
+			%td= checker banner.right
+			%td= checker banner.bottom
+			%td= checker banner.left
+
 			%td= banner.link
 			%td
-				= link_to image_tag('trash.gif'), banner, method: :delete, data: { confirm: 'Are you sure?'}
+				= link_to image_tag('pencil.png'), edit_banner_path( banner )
+				= link_to image_tag('trash.png'), banner, method: :delete, data: { confirm: 'Are you sure?'}

@@ -1,9 +1,27 @@
 class BannersController < ApplicationController
 
-	before_action :set_banner, only: [:destroy]
+	before_action :set_banner, only: [:edit, :update, :destroy]
 
   def index
-    @banners = Banner.all
+    @banners = Banner.asc
+  end
+
+  def new
+    @banner = Banner.new
+  end
+
+  def create
+    Banner.create! banner_params
+
+    redirect_to banners_path , notice: "Banner was succesfully created."
+  end
+
+  def edit; end
+
+  def update
+    @banner.update! banner_params
+
+    redirect_to banners_path, notice: "Banner was successfully updated."
   end
 
   def destroy
@@ -18,6 +36,6 @@ class BannersController < ApplicationController
   end
 
   def banner_params
-    params.require(:banner).permit(:name)
+    params.require(:banner).permit([:name, :top, :right, :bottom, :left, :banner_type, :link])
   end
 end

@@ -8,4 +8,5 @@
       %li{ class: active_aside_item(:v3) }
         = link_to "v3", '#'
     - when 'banners'
-      %li= link_to 'Banner links', '#'
+      %li= link_to 'List of banners', banners_path
+      %li= link_to 'New banner', new_banner_path

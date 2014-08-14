@@ -12,11 +12,12 @@ gem 'haml'
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass'
 
-gem 'sdoc', '~> 0.4.0',          group: :doc
-
 gem 'rails_12factor', group: :production
 
-gem 'spring',        group: :development
+group :development do
+	gem 'quiet_assets'
+	gem 'spring'
+end
 
 group :development, :test do
   gem 'pry-byebug'

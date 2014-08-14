@@ -17,11 +17,14 @@ ActiveRecord::Schema.define(version: 20140813064825) do
   enable_extension "plpgsql"
 
   create_table "banners", force: true do |t|
-    t.string "name"
-    t.string "banner_type"
-    t.string "place"
-    t.string "link"
-    t.text   "html"
+    t.string  "name"
+    t.string  "banner_type"
+    t.boolean "top"
+    t.boolean "right"
+    t.boolean "bottom"
+    t.boolean "left"
+    t.string  "link"
+    t.text    "html"
   end
 
 end
