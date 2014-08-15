@@ -6,3 +6,22 @@ $grid-gutter-width: 5px;
 
 @import "layout";
 @import "banners";
+
+
+#radio_banner_type {
+	label:not(:first-child) {
+		margin-right: 10px;
+	}
+	label:first-child {
+		margin-right: 14px;
+	}
+}
+
+#checkbox_place {
+	label:not(:first-child) {
+		margin-right: 10px;
+	}
+	label:first-child{
+		margin-right: 10px;
+	}
+}
