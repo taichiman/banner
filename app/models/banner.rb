@@ -1,4 +1,5 @@
 class Banner < ActiveRecord::Base
-	scope :asc,  -> { order(id: :asc) }
-	scope :desc, -> { order(id: :desc) }
+	include Scopes
+
+	validates :banner_type, presence: true
 end

@@ -1,10 +1,11 @@
 = form_for @banner do |f|
+	= render partial: '/layouts/items/errors', locals: { object: @banner }
 	
 	<!-- ... -->
 	<!-- Type div -->
 	<!-- ... -->
 	.form-group#radio_banner_type
-		= f.label :banner_type, 'Type:'
+		%label Type:
 		= f.radio_button :banner_type, :banner
 		= f.label :banner_type, 'Banner', value: :banner
 		= f.radio_button :banner_type, :flash
@@ -16,7 +17,7 @@
 	<!-- Place div -->
 	<!-- ... -->
 	.form-group#checkbox_place
-		= f.label :place, 'Place:'
+		%label Place:
 		= f.check_box :top
 		= f.label :top, 'Top'
 		= f.check_box :right

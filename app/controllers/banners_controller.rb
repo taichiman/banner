@@ -11,9 +11,13 @@ class BannersController < ApplicationController
   end
 
   def create
-    Banner.create! banner_params
+    @banner = Banner.new banner_params
 
-    redirect_to banners_path , notice: "Banner was succesfully created."
+    if @banner.save
+      redirect_to banners_path , notice: "Banner was succesfully created."
+    else
+      render :new
+    end
   end
 
   def edit; end
