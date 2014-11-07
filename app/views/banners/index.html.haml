@@ -1,24 +1,51 @@
 %h1 List of Banners
 
-%table.table.table-striped
-	%thead
-		%th Type
-		%th Top
-		%th Right
-		%th Bottom
-		%th Left
-		%th Link
-	%tbody
-	- @banners.each do |banner|
-		%tr
-			%td= banner.banner_type
+%p
+:preserve
+  <ul class="nav nav-tabs" id="banners-tab" role="tablist" data-tabs="tabs">
+    <li class="active">
+      <a href="#banner" role="tab" data-toggle="tab" >Banner</a>
+    </li>
+    <li>
+      <a href="#flash"  role="tab" data-toggle="tab" >Flash</a>
+    </li>
+    <li>
+      <a href="#html"   role="tab" data-toggle="tab" >HTML</a>
+    </li>
+  </ul>
 
-			%td= checker banner.top
-			%td= checker banner.right
-			%td= checker banner.bottom
-			%td= checker banner.left
+  <div class="tab-content">
+  	<div class="tab-pane active" id="banner">
+  		<span>Banner</span>
+  	</div>
+    <div class="tab-pane" id="flash">
+      <span>Flash</span>
+    </div>
+  	<div class="tab-pane" id="html">
+  		<span>Html</span>
+  	</div>
+  </div>
 
-			%td= banner.link
-			%td
-				= link_to image_tag('pencil.png'), edit_banner_path( banner )
-				= link_to image_tag('trash.png'), banner, method: :delete, data: { confirm: 'Are you sure?'}
+
+/ %table.table.table-striped
+/ 	%thead
+/ 		%th Type
+/ 		%th Top
+/ 		%th Right
+/ 		%th Bottom
+/ 		%th Left
+/ 		%th Link
+/ 	%tbody
+/ 	- @banners.each do |banner|
+/ 		%tr
+/ 			%td= banner.banner_type
+
+/ 			%td= checker banner.top
+/ 			%td= checker banner.right
+/ 			%td= checker banner.bottom
+/ 			%td= checker banner.left
+
+/ 			%td= banner.link
+/ 			%td
+/ 				= link_to image_tag('pencil.png'), edit_banner_path( banner )
+/ 				= link_to image_tag('trash.png'), banner, method: :delete, data: { confirm: 'Are you sure?'}
